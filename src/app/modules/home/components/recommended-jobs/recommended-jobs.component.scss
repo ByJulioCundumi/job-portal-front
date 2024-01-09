@@ -1,0 +1,33 @@
+.recommended{
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  padding: 0 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__job{
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1000px){
+  .recommended{
+    margin-top: 11rem;
+  }
+}
+
+@media (max-width: 750px){
+  .recommended{
+    margin-top: 14rem;
+  }
+}

@@ -1,0 +1,36 @@
+.jobs{
+
+  &__details{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__container{
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+}
+
+.span-active{
+  font-weight: bold;
+}
+
+@media (max-width: 1200px){
+  .jobs{
+    &__container{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+
+@media (max-width: 1000px){
+  .jobs{
+    &__container{
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.job-filters{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: sticky;
+  top: 6rem;
+
+  &__title{
+    color: rgb(0, 162, 255);
+  }
+
+  &__type{
+    display: flex;
+    gap: 0.3rem;
+  }
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 1000px){
+  .job-filters{
+    top: 11rem;
+  }
+}
+
+@media (max-width: 750px){
+  .job-filters{
+    top: 14rem;
+  }
+}
+

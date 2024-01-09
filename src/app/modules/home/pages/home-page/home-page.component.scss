@@ -1,0 +1,10 @@
+.home{
+
+  &__container{
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    padding: 0 6rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

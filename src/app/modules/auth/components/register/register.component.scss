@@ -1,0 +1,58 @@
+.register {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__form {
+    border: 1px solid rgba(0, 0, 0, 0.192);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.123);
+    margin-top: 3rem;
+  }
+
+  &__group{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__title{
+    text-align: center;
+  }
+
+  &__input-input {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 0.5rem;
+    width: 18rem;
+    border-radius: 0.5rem;
+  }
+
+  &__link {
+    text-decoration: underline;
+    color: rgb(0, 130, 206);
+    width: fit-content;
+  }
+
+  &__select{
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+  }
+
+  &__btn{
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
+  }
+}

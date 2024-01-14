@@ -1,0 +1,34 @@
+<section class="register">
+  <form class="register__form">
+    <h2 class="register__title">Registrarse</h2>
+    <div class="register__group">
+      <div class="register__input">
+        <p class="register__input-text">Nombre</p>
+        <input class="register__input-input" type="text" placeholder="Nombre...">
+      </div>
+      <div class="register__input">
+        <p class="register__input-text">Email</p>
+        <input class="register__input-input" type="email" placeholder="Email...">
+      </div>
+    </div>
+    <div class="register__group">
+      <div class="register__input">
+        <p class="register__input-text">Contraseña</p>
+        <input class="register__input-input" type="password" placeholder="Contraseña...">
+      </div>
+      <div class="register__input">
+        <p class="register__input-text">Confirmar Contraseña</p>
+        <input class="register__input-input" type="password" placeholder="Contraseña...">
+      </div>
+    </div>
+    <div class="register__input">
+      <p class="register__input-text">Tipo de cuenta</p>
+      <select class="register__select">
+        <option value="user">Usuario</option>
+        <option value="company">Empresa</option>
+      </select>
+    </div>
+    <a class="register__link" routerLink="/auth">Iniciar Sesion</a>
+    <button class="register__btn">Crear cuenta</button>
+  </form>
+</section>

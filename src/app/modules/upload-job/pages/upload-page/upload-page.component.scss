@@ -1,0 +1,28 @@
+.upload{
+
+  &__container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 4rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1300px){
+  .upload{
+
+    &__container{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 700px){
+  .upload{
+
+    &__container{
+      margin-top: 5.5rem;
+    }
+  }
+}

@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { authRequiredGuard } from './guards/auth-required.guard';
 
 const routes: Routes = [
   {
     path: "",
     loadChildren: ()=> import("./modules/home/home.module").then((m)=>m.HomeModule)
+  },
+  {
+    path: "upload",
+    loadChildren: ()=> import("./modules/upload-job/upload-job.module").then((m)=>m.UploadJobModule),
+    canActivate: [authRequiredGuard]
+  },
+  {
+    path: "auth",
+    loadChildren: ()=> import("./modules/auth/auth.module").then((m)=>m.AuthModule)
   }
 ];
 

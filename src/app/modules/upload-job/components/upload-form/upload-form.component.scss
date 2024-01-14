@@ -1,0 +1,117 @@
+.upload-form {
+  position: fixed;
+  top: 5rem;
+
+  &__form {
+    border: 1px solid rgba(0, 0, 0, 0.192);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.123);
+  }
+
+  &__group{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__input-input {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 0.5rem;
+    width: 17rem;
+    border-radius: 0.5rem;
+  }
+
+  &__input-select{
+    display: flex;
+    gap: 8.5rem;
+  }
+
+  &__textarea{
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 0.5rem;
+    width: 100%;
+    max-height: 4rem;
+    max-width: 35rem;
+    border-radius: 0.5rem;
+    min-height: 6rem;
+  }
+
+  &__link {
+    text-decoration: underline;
+    color: rgb(0, 130, 206);
+    width: fit-content;
+  }
+
+  &__select{
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+  }
+
+  &__btn{
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
+  }
+}
+
+@media (max-width: 1300px){
+  .upload-form{
+    position: static;
+
+    &__form {
+      width: 40rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (max-width: 700px){
+  .upload-form{
+
+    &__form {
+      width: 90%;
+
+    }
+
+    &__input-select{
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    &__input-input {
+      width: 30rem;
+    }
+  }
+}
+
+@media (max-width: 630px){
+  .upload-form{
+
+    &__input-input {
+      width: 20rem;
+    }
+  }
+}
+
+@media (max-width: 450px){
+  .upload-form{
+
+    &__input-input {
+      width: 15rem;
+    }
+  }
+}

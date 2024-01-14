@@ -12,6 +12,18 @@
     gap: 1rem;
   }
 
+  &__filter{
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__select{
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+  }
+
 }
 
 .span-active{

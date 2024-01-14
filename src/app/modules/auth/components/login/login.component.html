@@ -1,0 +1,19 @@
+<section class="login">
+  <form class="login__form" [formGroup]="loginForm" (submit)="submitForm()">
+    <h2 class="login__title">Iniciar Sesion</h2>
+    <div class="login__input">
+      <p class="login__input-text">Email</p>
+      <input class="login__input-input" type="email" placeholder="Email..." formControlName="email">
+      <span class="login__error" *ngIf="hasErrors('email', 'minlength')">Ingrese un email valido</span>
+      <span class="login__error" *ngIf="hasErrors('email', 'required')">Ingrese un email</span>
+    </div>
+    <div class="login__input">
+      <p class="login__input-text">Contraseña</p>
+      <input class="login__input-input" type="password" placeholder="Contraseña..." formControlName="password">
+      <span class="login__error" *ngIf="hasErrors('password', 'minlength')">Ingrese una constraseña de 8 caracteres</span>
+      <span class="login__error" *ngIf="hasErrors('password', 'required')">Ingrese una contraseña</span>
+    </div>
+    <a class="login__link" routerLink="/auth/register">Crear una cuenta</a>
+    <button type="submit" class="login__btn">Entrar</button>
+  </form>
+</section>

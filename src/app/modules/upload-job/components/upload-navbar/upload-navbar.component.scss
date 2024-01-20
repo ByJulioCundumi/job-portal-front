@@ -23,14 +23,24 @@
     color: rgb(0, 162, 255);
   }
 
-  &__register, &__login{
+  &__register{
     color: black;
     font-weight: bold;
+  }
+
+  &__login{
+    color: rgb(0, 162, 255);
+    font-weight: bold;
+    cursor: pointer;
   }
 
   &__options{
     display: flex;
     gap: 2rem;
+  }
+
+  &__active{
+    font-weight: bold;
   }
 }
 

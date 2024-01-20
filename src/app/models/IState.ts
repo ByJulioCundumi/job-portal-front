@@ -6,6 +6,6 @@ import { IUserDTO } from "./IUser";
 export interface IState{
   userState: IUserDTO,
   loadingState: ILoading,
-  ModalState: IModal,
+  modalState: IModal,
   jobState: IJobs
 }

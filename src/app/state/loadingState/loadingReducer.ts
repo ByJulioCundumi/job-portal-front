@@ -11,7 +11,7 @@ export const loadingReducer = createReducer(
   on(setLoading, (state, {loading})=>{
     return {
       ...state,
-      isLoading: loading.isLoading
+      isLoading: loading
     }
   })
 )

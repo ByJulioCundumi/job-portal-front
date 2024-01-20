@@ -4,5 +4,8 @@
   <div class="home__container">
     <app-job-filters />
     <app-jobs />
+    <div *ngIf="modalState">
+      <app-job-details/>
+    </div>
   </div>
 </section>

@@ -3,5 +3,5 @@ import { IModal } from "src/app/models/IModal";
 
 export const setModal = createAction(
   "[home page] setModal",
-  props<{modal:IModal}>()
+  props<{isOpen:boolean}>()
 )

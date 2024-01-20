@@ -5,11 +5,11 @@ import { modalSelector } from 'src/app/state/modalState/modal.selector';
 import { setModal } from 'src/app/state/modalState/modalActions';
 
 @Component({
-  selector: 'app-job-card',
-  templateUrl: './job-card.component.html',
-  styleUrls: ['./job-card.component.scss']
+  selector: 'app-job-details',
+  templateUrl: './job-details.component.html',
+  styleUrls: ['./job-details.component.scss']
 })
-export class JobCardComponent implements OnInit{
+export class JobDetailsComponent implements OnInit{
   modalState!:boolean;
 
   constructor(private store:Store<IState>){}
@@ -23,5 +23,4 @@ export class JobCardComponent implements OnInit{
   changeModalState = ()=>{
     this.store.dispatch(setModal({isOpen: !this.modalState}))
   }
-
 }

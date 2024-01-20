@@ -1,5 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { setUser } from 'src/app/state/userState/userActions';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
 
-  constructor(private fb:FormBuilder){}
+  constructor(private fb:FormBuilder, private http:HttpClient, private service:AuthServiceService, private store:Store){}
 
   ngOnInit(): void {
     this.loginForm =  this.fb.group({
@@ -23,7 +27,10 @@ export class LoginComponent implements OnInit{
   }
 
   submitForm = ()=>{
-    console.log(this.loginForm.invalid)
-    console.log(this.loginForm)
+    this.service.loginRequest(this.loginForm.value).subscribe((user:any)=>{
+      if(user.id){
+        this.store.dispatch(setUser({user}))
+      }
+    })
   }
 }

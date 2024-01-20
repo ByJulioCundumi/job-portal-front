@@ -8,10 +8,10 @@ const initialState: IModal = {
 
 export const modalReducer = createReducer(
   initialState,
-  on(setModal, (state, {modal})=>{
+  on(setModal, (state, {isOpen})=>{
     return {
       ...state,
-      isOpen: modal.isOpen
+      isOpen
     }
   })
 )

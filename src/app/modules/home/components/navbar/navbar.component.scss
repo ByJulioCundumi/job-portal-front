@@ -27,6 +27,26 @@
     display: flex;
     gap: 0.5rem;
   }
+
+  &__role{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__active{
+    font-weight: bold;
+  }
+
+  &__logout{
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: rgb(0, 162, 255);
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 1000px){

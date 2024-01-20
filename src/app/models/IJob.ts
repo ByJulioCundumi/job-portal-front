@@ -10,5 +10,5 @@ export interface IJob{
 }
 
 export interface IJobs{
-  jobs: IJob[]
+  jobs: IJob[];
 }

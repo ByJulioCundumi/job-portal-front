@@ -4,5 +4,13 @@
     <input type="text" name="search-job" class="navbar__search-job input-text" placeholder="Buscar Trabajo, Ej: Cocinero">
     <input type="text" name="search-country" class="navbar__search-country input-text" placeholder="Buscar País, Ej: Colombia">
   </div>
-  <a routerLink="/upload" class="navbar__upload">Publicar Empleo</a>
+  <a *ngIf="!user.id" routerLink="/upload" class="navbar__upload">Publicar Empleo</a>
+  <div class="navbar__role" *ngIf="user.role === 'user'">
+    <p class="navbar__welcome">Bienvenido: <span class="navbar__active">{{user.email}}</span></p>
+    <button (click)="closeSession()" class="navbar__logout">Cerrar Sesion</button>
+  </div>
+  <div class="navbar__role" *ngIf="user.role === 'company'">
+    <a routerLink="/upload" class="navbar__upload">Publicar Empleo</a>
+    <button (click)="closeSession()" class="navbar__logout">Cerrar Sesion</button>
+  </div>
 </div>

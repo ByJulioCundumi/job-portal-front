@@ -1,34 +1,41 @@
 <section class="register">
-  <form class="register__form">
+  <form class="register__form" [formGroup]="registerForm" (submit)="submitForm()">
     <h2 class="register__title">Registrarse</h2>
     <div class="register__group">
       <div class="register__input">
         <p class="register__input-text">Nombre</p>
-        <input class="register__input-input" type="text" placeholder="Nombre...">
+        <input class="register__input-input" type="text" placeholder="Nombre..." formControlName="firstname">
+        <p *ngIf="hasErrors('firstname', 'required')" class="register__error">Ingrese un nombre</p>
+        <p *ngIf="hasErrors('firstname', 'minlength')" class="register__error">Ingrese un nombre valido</p>
       </div>
       <div class="register__input">
         <p class="register__input-text">Email</p>
-        <input class="register__input-input" type="email" placeholder="Email...">
+        <input class="register__input-input" type="email" placeholder="Email..." formControlName="email">
+        <p *ngIf="hasErrors('email', 'required')" class="register__error">Ingrese un email</p>
       </div>
     </div>
     <div class="register__group">
       <div class="register__input">
         <p class="register__input-text">Contraseña</p>
-        <input class="register__input-input" type="password" placeholder="Contraseña...">
+        <input class="register__input-input" type="password" placeholder="Contraseña..." formControlName="password">
+        <p *ngIf="hasErrors('password', 'required')" class="register__error">Ingrese un contraseña</p>
+        <p *ngIf="hasErrors('password', 'minlength')" class="register__error">Ingrese una contraseña valida</p>
       </div>
       <div class="register__input">
         <p class="register__input-text">Confirmar Contraseña</p>
-        <input class="register__input-input" type="password" placeholder="Contraseña...">
+        <input class="register__input-input" type="password" placeholder="Contraseña..." formControlName="conf_password">
+        <p *ngIf="hasErrors('conf_password', 'required')" class="register__error">Confirme su contraseña</p>
+        <p *ngIf="hasErrors('conf_password', 'minlength')" class="registernºº__error">Ingrese una contraseña valida</p>
       </div>
     </div>
     <div class="register__input">
       <p class="register__input-text">Tipo de cuenta</p>
-      <select class="register__select">
+      <select class="register__select" formControlName="role">
         <option value="user">Usuario</option>
         <option value="company">Empresa</option>
       </select>
     </div>
     <a class="register__link" routerLink="/auth">Iniciar Sesion</a>
-    <button class="register__btn">Crear cuenta</button>
+    <button class="register__btn" type="submit">Crear cuenta</button>
   </form>
 </section>

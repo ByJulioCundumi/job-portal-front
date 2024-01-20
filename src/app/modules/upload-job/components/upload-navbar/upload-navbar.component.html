@@ -1,7 +1,7 @@
 <div class="upload-navbar">
   <a routerLink="/" class="upload-navbar__icon">Job Portal</a>
   <div class="upload-navbar__options">
-    <p class="upload-navbar__welcome">Bienvenido: <span>Fulano@gmail.com</span></p>
-    <a routerLink="/" class="upload-navbar__login">Cerrar Sesion</a>
+    <p class="upload-navbar__welcome">Bienvenido: <span class="upload-navbar__active">{{user.email}}</span></p>
+    <a (click)="closeSession()" class="upload-navbar__login">Cerrar Sesion</a>
   </div>
 </div>

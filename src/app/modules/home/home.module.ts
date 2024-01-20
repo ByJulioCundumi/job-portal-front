@@ -8,6 +8,7 @@ import { RecommendedJobsComponent } from './components/recommended-jobs/recommen
 import { JobFiltersComponent } from './components/job-filters/job-filters.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { JobCardComponent } from './components/job-card/job-card.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { JobCardComponent } from './components/job-card/job-card.component';
     RecommendedJobsComponent,
     JobFiltersComponent,
     JobsComponent,
-    JobCardComponent
+    JobCardComponent,
+    JobDetailsComponent
   ],
   imports: [
     CommonModule,

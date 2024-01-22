@@ -1,5 +1,9 @@
 export interface IUser {
   id: number,
+  img?: {
+    url: string,
+    id: string
+  },
   firstname: string,
   email: string,
   password: string,

@@ -1,50 +1,57 @@
 <div class="upload-form">
-  <form class="upload-form__form">
+  <form class="upload-form__form" [formGroup]="uploadForm" (submit)="submitForm()">
     <h2 class="upload-form__title">Publicar Oferta</h2>
     <div class="upload-form__group">
       <div class="upload-form__input">
         <p class="upload-form__input-text">Titulo</p>
-        <input class="upload-form__input-input" type="text" placeholder="Nombre...">
+        <input class="upload-form__input-input" type="text" placeholder="Titulo..." formControlName="title">
+        <div *ngIf="hasErrors('title', 'required')" class="upload-form__error">Campo requerido</div>
       </div>
       <div class="upload-form__input">
         <p class="upload-form__input-text">Ubicacion</p>
-        <input class="upload-form__input-input" type="text" placeholder="Nombre...">
+        <input class="upload-form__input-input" type="text" placeholder="Ubicacion..." formControlName="location">
+        <div *ngIf="hasErrors('location', 'required')" class="upload-form__error">Campo requerido</div>
       </div>
     </div>
     <div class="upload-form__input-select">
       <div class="upload-form__input">
         <p class="upload-form__input-text">Tipo Empleo</p>
-        <select class="upload-form__select">
-          <option value="user">Tiempo Completo</option>
-          <option value="company">Medio Tiempo</option>
-          <option value="company">Contratista</option>
-          <option value="company">Pasantia</option>
+        <select class="upload-form__select" formControlName="type">
+          <option value="Tiempo Completo">Tiempo Completo</option>
+          <option value="Medio Tiempo">Medio Tiempo</option>
+          <option value="Contratista">Contratista</option>
+          <option value="Pasantia">Pasantia</option>
         </select>
+        <div *ngIf="hasErrors('type', 'required')" class="upload-form__error">Campo requerido</div>
       </div>
       <div class="upload-form__input">
         <p class="upload-form__input-text">Modalidad</p>
-        <select class="upload-form__select">
-          <option value="user">Presencial</option>
-          <option value="company">Remoto</option>
-          <option value="company">Hibrido</option>
+        <select class="upload-form__select" formControlName="modality">
+          <option value="Presencial">Presencial</option>
+          <option value="Remoto">Remoto</option>
+          <option value="Hibrido">Hibrido</option>
         </select>
+        <div *ngIf="hasErrors('modality', 'required')" class="upload-form__error">Campo requerido</div>
       </div>
     </div>
     <div class="upload-form__group">
       <div class="upload-form__input">
         <p class="upload-form__input-text">Salario</p>
-        <input class="upload-form__input-input" type="password" placeholder="Contraseña...">
+        <input class="upload-form__input-input" type="number" placeholder="Salario..." formControlName="salary">
+        <div *ngIf="hasErrors('salary', 'required')" class="upload-form__error">Campo requerido</div>
       </div>
       <div class="upload-form__input">
         <p class="upload-form__input-text">Experiencia</p>
-        <input class="upload-form__input-input" type="password" placeholder="Contraseña...">
+        <input class="upload-form__input-input" type="number" placeholder="Experiencia..." formControlName="experience">
+        <div *ngIf="hasErrors('experience', 'required')" class="upload-form__error">Campo requerido</div>
       </div>
     </div>
 
     <div class="upload-form__input">
       <p class="upload-form__input-text">Descripción</p>
-      <textarea class="upload-form__textarea"></textarea>
+      <textarea class="upload-form__textarea" formControlName="description"></textarea>
+      <div *ngIf="hasErrors('description', 'required')" class="upload-form__error">Campo requerido</div>
     </div>
-    <button class="upload-form__btn">Publicar</button>
+    <button type="submit" class="upload-form__btn">Publicar</button>
   </form>
 </div>

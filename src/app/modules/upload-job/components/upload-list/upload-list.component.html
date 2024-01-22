@@ -1,12 +1,9 @@
 <div class="upload-list">
-  <p class="upload-list__result">Trabajos Pulicados: <span class="span-active">5</span> Resultados</p>
+  <p class="upload-list__result">Trabajos Pulicados: <span class="span-active">{{jobs.length}}</span> Resultados</p>
 
   <div class="upload-list__container">
-    <app-upload-card />
-    <app-upload-card />
-    <app-upload-card />
-    <app-upload-card />
-    <app-upload-card />
-    <app-upload-card />
+    <div *ngFor="let job of jobs">
+      <app-upload-card [job]="job"/>
+    </div>
   </div>
 </div>

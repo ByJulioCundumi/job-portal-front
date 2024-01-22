@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { IState } from 'src/app/models/IState';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { userStateSelector } from 'src/app/state/userState/user.selector';
 import { setUser } from 'src/app/state/userState/userActions';
 
 @Component({
@@ -13,7 +16,7 @@ import { setUser } from 'src/app/state/userState/userActions';
 export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
 
-  constructor(private fb:FormBuilder, private http:HttpClient, private service:AuthServiceService, private store:Store){}
+  constructor(private fb:FormBuilder, private http:HttpClient, private service:AuthServiceService, private store:Store<IState>, private route:Router){}
 
   ngOnInit(): void {
     this.loginForm =  this.fb.group({

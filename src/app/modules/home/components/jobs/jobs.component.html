@@ -1,6 +1,6 @@
 <section class="jobs">
   <div class="jobs__details">
-    <p class="jobs__result">Trabajos Encontrados: <span class="span-active">100</span> Resultados</p>
+    <p class="jobs__result">Trabajos Encontrados: <span class="span-active">{{jobs.length}}</span> Resultados</p>
     <div class="jobs__filter">
       <label for="">Ordenar por:</label>
       <select class="jobs__select">
@@ -10,17 +10,8 @@
     </div>
   </div>
   <div class="jobs__container">
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
-    <app-job-card/>
+    <div *ngFor="let job of jobs">
+      <app-job-card [job]="job"/>
+    </div>
   </div>
 </section>

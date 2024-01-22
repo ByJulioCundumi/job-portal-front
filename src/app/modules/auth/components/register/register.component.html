@@ -28,12 +28,19 @@
         <p *ngIf="hasErrors('conf_password', 'minlength')" class="registernºº__error">Ingrese una contraseña valida</p>
       </div>
     </div>
-    <div class="register__input">
-      <p class="register__input-text">Tipo de cuenta</p>
-      <select class="register__select" formControlName="role">
-        <option value="user">Usuario</option>
-        <option value="company">Empresa</option>
-      </select>
+    <div class="register__last">
+      <div class="register__input">
+        <p class="register__input-text">Tipo de cuenta</p>
+        <select class="register__select" formControlName="role" (change)="setRole($event)">
+          <option value="user">Usuario</option>
+          <option value="company">Empresa</option>
+        </select>
+      </div>
+      <div *ngIf="userRole === 'company'" class="register__input">
+        <p class="register__input-text">Logo Empresa</p>
+        <input (change)="onFileChange($event)" class="register__input-input" type="file" formControlName="company_logo">
+        <p *ngIf="hasErrors('company_logo', 'required')" class="register__error">Ingrese el logo de su Empresa</p>
+      </div>
     </div>
     <a class="register__link" routerLink="/auth">Iniciar Sesion</a>
     <button class="register__btn" type="submit">Crear cuenta</button>

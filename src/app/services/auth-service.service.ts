@@ -10,9 +10,8 @@ export class AuthServiceService {
 
   constructor(private http: HttpClient) { }
 
-  registerRequest = (data:IUserRegister) => {
+  registerRequest = (data:FormData) => {
     const options = {
-      headers: new HttpHeaders({"Content-Type":"application/json"}),
       withCredentials: true
     }
     return this.http.post<Observable<IUserDTO>>("http://localhost:3000/api/register", data, options)

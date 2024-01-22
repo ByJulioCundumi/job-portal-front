@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
-import { IJobs } from "src/app/models/IJob";
 import { setJobs } from "./jobActions";
+import { IJobs } from "src/app/models/IJob";
 
 const initialState:IJobs = {
   jobs: []
@@ -8,10 +8,10 @@ const initialState:IJobs = {
 
 export const jobReducer = createReducer(
   initialState,
-  on(setJobs, (state, {jobsArr})=>{
+  on(setJobs, (state, {jobs})=>{
     return {
       ...state,
-      jobs: [...jobsArr.jobs]
+      jobs: [...jobs]
     }
   })
 )

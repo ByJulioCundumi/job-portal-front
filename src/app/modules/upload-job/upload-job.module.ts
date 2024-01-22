@@ -7,6 +7,7 @@ import { UploadNavbarComponent } from './components/upload-navbar/upload-navbar.
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { UploadListComponent } from './components/upload-list/upload-list.component';
 import { UploadCardComponent } from './components/upload-card/upload-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { UploadCardComponent } from './components/upload-card/upload-card.compon
   ],
   imports: [
     CommonModule,
-    UploadJobRoutingModule
+    UploadJobRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class UploadJobModule { }

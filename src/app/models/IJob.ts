@@ -1,4 +1,5 @@
 export interface IJob{
+  id?:number,
   title:string,
   location:string,
   type:string,

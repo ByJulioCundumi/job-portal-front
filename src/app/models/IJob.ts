@@ -7,7 +7,7 @@ export interface IJob{
   salary:number,
   experience:number,
   description:string,
-  createdAt:Date
+  createdAt:string
 }
 
 export interface IJobs{

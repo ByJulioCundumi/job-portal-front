@@ -6,23 +6,28 @@
       <h4 class="job-filters__subtitle">Tipo de trabajo</h4>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
+        <input (change)="onInputChange()" type="radio" name="job_type" value="tiempo completo" [(ngModel)]="job_type">
         <label>Tiempo Completo</label>
       </div>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
+        <input (change)="onInputChange()" type="radio" name="job_type" value="medio tiempo" [(ngModel)]="job_type">
         <label>Medio Tiempo</label>
       </div>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
+        <input (change)="onInputChange()" type="radio" name="job_type" value="contratista" [(ngModel)]="job_type">
         <label>Contratista</label>
       </div>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
+        <input (change)="onInputChange()" type="radio" name="job_type" value="pasantia" [(ngModel)]="job_type">
         <label>Pasantia</label>
+      </div>
+
+      <div class="job-filters__type">
+        <input (change)="onInputChange()" type="radio" name="job_type" value="all" [(ngModel)]="job_type">
+        <label>Ver Todos</label>
       </div>
     </div>
 
@@ -30,18 +35,22 @@
       <h4 class="job-filters__subtitle">Modalidad</h4>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
+        <input (change)="onInputChange()" type="radio" name="modality" value="presencial" [(ngModel)]="modality">
         <label>Presencial</label>
       </div>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
+        <input (change)="onInputChange()" type="radio" name="modality" value="remoto" [(ngModel)]="modality">
         <label>Remoto</label>
       </div>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
+        <input (change)="onInputChange()" type="radio" name="modality" value="hibrido" [(ngModel)]="modality">
         <label>Hibrido</label>
+      </div>
+      <div class="job-filters__type">
+        <input (change)="onInputChange()" type="radio" name="modality" value="all" [(ngModel)]="modality">
+        <label>Ver Todos</label>
       </div>
     </div>
 
@@ -49,28 +58,28 @@
       <h4 class="job-filters__subtitle">Experiencia</h4>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
+        <input (change)="onInputChange()" type="radio" name="experience" value="0" [(ngModel)]="experience">
         <label>Sin Experiencia</label>
       </div>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
+        <input (change)="onInputChange()" type="radio" name="experience" value="1" [(ngModel)]="experience">
         <label>1 Año</label>
       </div>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
-        <label>1 - 2 Años</label>
+        <input (change)="onInputChange()" type="radio" name="experience" value="3" [(ngModel)]="experience">
+        <label>1 - 3 Años</label>
       </div>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
-        <label>2 - 5 Años</label>
+        <input (change)="onInputChange()" type="radio" name="experience" value="4" [(ngModel)]="experience">
+        <label>+3 Años</label>
       </div>
 
       <div class="job-filters__type">
-        <input type="checkbox" name="job-type">
-        <label>+5 Años</label>
+        <input (change)="onInputChange()" type="radio" name="experience" value="all" [(ngModel)]="experience">
+        <label>Ver Todos</label>
       </div>
     </div>
   </div>

@@ -1,16 +1,17 @@
 <div class="recommended">
   <h2 class="recommended__title">Trabajos Recomendados</h2>
   <div class="recommended__container">
-    <button class="recommended__job">FrontEnd</button>
-    <button class="recommended__job">BackEnd</button>
-    <button class="recommended__job">Programador web</button>
-    <button class="recommended__job">VueJS</button>
-    <button class="recommended__job">Spring Boot</button>
-    <button class="recommended__job">Phyton</button>
-    <button class="recommended__job">Programador Android</button>
-    <button class="recommended__job">React</button>
-    <button class="recommended__job">Angular</button>
-    <button class="recommended__job">Nodejs</button>
-    <button class="recommended__job">Full-Stack</button>
+    <button (click)="recommendedJob('frontend')" class="recommended__job">FrontEnd</button>
+    <button (click)="recommendedJob('backend')" class="recommended__job">BackEnd</button>
+    <button (click)="recommendedJob('programador web')" class="recommended__job">Programador web</button>
+    <button (click)="recommendedJob('vuejs')" class="recommended__job">VueJS</button>
+    <button (click)="recommendedJob('spring boot')" class="recommended__job">Spring Boot</button>
+    <button (click)="recommendedJob('phyton')" class="recommended__job">Phyton</button>
+    <button (click)="recommendedJob('programador android')" class="recommended__job">Programador Android</button>
+    <button (click)="recommendedJob('react')" class="recommended__job">React</button>
+    <button (click)="recommendedJob('angular')" class="recommended__job">Angular</button>
+    <button (click)="recommendedJob('nodejs')" class="recommended__job">Nodejs</button>
+    <button (click)="recommendedJob('full stack')" class="recommended__job">Full-Stack</button>
+    <button (click)="recommendedJob('all')" class="recommended__job">Todos Los Trabajos</button>
   </div>
 </div>

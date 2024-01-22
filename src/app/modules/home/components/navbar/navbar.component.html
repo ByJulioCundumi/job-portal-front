@@ -1,8 +1,8 @@
 <div class="navbar">
   <a routerLink="" class="navbar__icon">Job Portal</a>
   <div class="navbar__search">
-    <input type="text" name="search-job" class="navbar__search-job input-text" placeholder="Buscar Trabajo, Ej: Cocinero">
-    <input type="text" name="search-country" class="navbar__search-country input-text" placeholder="Buscar País, Ej: Colombia">
+    <input (change)="filterJobs()" type="text" name="search-job" [(ngModel)]="job" class="navbar__search-job input-text" placeholder="Buscar Trabajo, Ej: Cocinero">
+    <input (change)="filterJobs()" type="text" name="search-country" [(ngModel)]="country" class="navbar__search-country input-text" placeholder="Buscar País, Ej: Colombia">
   </div>
   <a *ngIf="!user.id" routerLink="/upload" class="navbar__upload">Publicar Empleo</a>
   <div class="navbar__role" *ngIf="user.role === 'user'">

@@ -6,7 +6,7 @@ import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 import { AuthNavbarComponent } from './components/auth-navbar/auth-navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({

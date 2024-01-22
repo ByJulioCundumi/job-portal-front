@@ -9,6 +9,7 @@ import { JobFiltersComponent } from './components/job-filters/job-filters.compon
 import { JobsComponent } from './components/jobs/jobs.component';
 import { JobCardComponent } from './components/job-card/job-card.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
   ],
   imports: [
     CommonModule,
+    FormsModule,
     HomeRoutingModule
   ]
 })

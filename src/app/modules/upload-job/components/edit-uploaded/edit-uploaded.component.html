@@ -1,0 +1,62 @@
+<section class="edit-uploaded">
+    <div class="edit-uploaded__container">
+      <form class="edit-uploaded__form" [formGroup]="uploadForm" (submit)="submitForm()">
+        <h2 class="edit-uploaded__title">Editar Oferta</h2>
+        <div class="edit-uploaded__group">
+          <div class="edit-uploaded__input">
+            <p class="edit-uploaded__input-text">Titulo</p>
+            <input class="edit-uploaded__input-input" type="text" placeholder="Titulo..." formControlName="title">
+            <div *ngIf="hasErrors('title', 'required')" class="edit-uploaded__error">Campo requerido</div>
+          </div>
+          <div class="edit-uploaded__input">
+            <p class="edit-uploaded__input-text">Ubicacion</p>
+            <input class="edit-uploaded__input-input" type="text" placeholder="Ubicacion..." formControlName="location">
+            <div *ngIf="hasErrors('location', 'required')" class="edit-uploaded__error">Campo requerido</div>
+          </div>
+        </div>
+        <div class="edit-uploaded__input-select">
+          <div class="edit-uploaded__input">
+            <p class="edit-uploaded__input-text">Tipo Empleo</p>
+            <select class="edit-uploaded__select" formControlName="type">
+              <option value="Tiempo Completo">Tiempo Completo</option>
+              <option value="Medio Tiempo">Medio Tiempo</option>
+              <option value="Contratista">Contratista</option>
+              <option value="Pasantia">Pasantia</option>
+            </select>
+            <div *ngIf="hasErrors('type', 'required')" class="edit-uploaded__error">Campo requerido</div>
+          </div>
+          <div class="edit-uploaded__input">
+            <p class="edit-uploaded__input-text">Modalidad</p>
+            <select class="edit-uploaded__select" formControlName="modality">
+              <option value="Presencial">Presencial</option>
+              <option value="Remoto">Remoto</option>
+              <option value="Hibrido">Hibrido</option>
+            </select>
+            <div *ngIf="hasErrors('modality', 'required')" class="edit-uploaded__error">Campo requerido</div>
+          </div>
+        </div>
+        <div class="edit-uploaded__group">
+          <div class="edit-uploaded__input">
+            <p class="edit-uploaded__input-text">Salario</p>
+            <input class="edit-uploaded__input-input" type="number" placeholder="Salario..." formControlName="salary">
+            <div *ngIf="hasErrors('salary', 'required')" class="edit-uploaded__error">Campo requerido</div>
+          </div>
+          <div class="edit-uploaded__input">
+            <p class="edit-uploaded__input-text">Experiencia</p>
+            <input class="edit-uploaded__input-input" type="number" placeholder="Experiencia..." formControlName="experience">
+            <div *ngIf="hasErrors('experience', 'required')" class="edit-uploaded__error">Campo requerido</div>
+          </div>
+        </div>
+
+        <div class="edit-uploaded__input">
+          <p class="edit-uploaded__input-text">Descripción</p>
+          <textarea class="edit-uploaded__textarea" formControlName="description"></textarea>
+          <div *ngIf="hasErrors('description', 'required')" class="edit-uploaded__error">Campo requerido</div>
+        </div>
+        <button type="submit" class="edit-uploaded__btn">Actualizar Empleo</button>
+      </form>
+    <button (click)="changeModalState()" class="edit-uploaded__close-btn">X</button>
+    </div>
+</section>
+
+

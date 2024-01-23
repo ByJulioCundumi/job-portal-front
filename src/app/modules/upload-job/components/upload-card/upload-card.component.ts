@@ -7,6 +7,8 @@ import { JobServiceService } from 'src/app/services/job-service.service';
 import { UtilService } from 'src/app/services/util.service';
 import { removeJob } from 'src/app/state/jobState/jobActions';
 import { setLoading } from 'src/app/state/loadingState/loadingActions';
+import { modalSelector } from 'src/app/state/modalState/modal.selector';
+import { setModal } from 'src/app/state/modalState/modalActions';
 import { userStateSelector } from 'src/app/state/userState/user.selector';
 
 @Component({
@@ -38,4 +40,5 @@ export class UploadCardComponent implements OnInit{
  loadDescription = (text:string)=>{
   return this.util.recortarTexto(text, 10)
 }
+
 }

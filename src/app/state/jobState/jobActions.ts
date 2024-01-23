@@ -11,6 +11,11 @@ export const addJob = createAction(
   props<{job:IJob}>()
 )
 
+export const updateJob = createAction(
+  "[upload page] update a job",
+  props<{job:IJob}>()
+)
+
 export const removeJob = createAction(
   "[upload page] remove a job",
   props<{id:number}>()

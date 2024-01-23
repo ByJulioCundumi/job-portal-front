@@ -3,7 +3,8 @@
 
   <div class="upload-list__container">
     <div *ngFor="let job of jobs">
-      <app-upload-card [job]="job"/>
+      <app-upload-card [job]="job" (click)="changeModalState(job)"/>
+      <app-edit-uploaded *ngIf="modalState"/>
     </div>
   </div>
 </div>

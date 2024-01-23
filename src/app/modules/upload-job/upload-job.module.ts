@@ -8,6 +8,7 @@ import { UploadFormComponent } from './components/upload-form/upload-form.compon
 import { UploadListComponent } from './components/upload-list/upload-list.component';
 import { UploadCardComponent } from './components/upload-card/upload-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditUploadedComponent } from './components/edit-uploaded/edit-uploaded.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     UploadNavbarComponent,
     UploadFormComponent,
     UploadListComponent,
-    UploadCardComponent
+    UploadCardComponent,
+    EditUploadedComponent
   ],
   imports: [
     CommonModule,

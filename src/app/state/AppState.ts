@@ -7,6 +7,7 @@ import { IState } from "../models/IState";
 import { allJobReducer } from "./allJobState/all.job.reducer";
 import { jobDetailReducer } from "./jobDetailState/job.detail.reducer";
 import { allJobsFilteredReducer } from "./allJobFiltered/all.jobs.filtered.reducer";
+import { updateJobReducer } from "./updateJobState/update.job.reducer";
 
 export const ROOT__REDUCERS: ActionReducerMap<IState> = {
   userState: userReducer,
@@ -15,5 +16,6 @@ export const ROOT__REDUCERS: ActionReducerMap<IState> = {
   jobState: jobReducer,
   allJobState: allJobReducer,
   jobDetailState: jobDetailReducer,
-  allJobsFilteredState: allJobsFilteredReducer
+  allJobsFilteredState: allJobsFilteredReducer,
+  updateJobState: updateJobReducer
 }

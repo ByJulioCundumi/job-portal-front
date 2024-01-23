@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { IUserDTO } from 'src/app/models/IUser';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { setLoading } from 'src/app/state/loadingState/loadingActions';
 import { setUser } from 'src/app/state/userState/userActions';
 
 @Component({
@@ -14,9 +16,9 @@ import { setUser } from 'src/app/state/userState/userActions';
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   userRole!: string;
-  img!:File;
+  img!: File;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private service: AuthServiceService, private store: Store) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private service: AuthServiceService, private store: Store, private router:Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -63,8 +65,18 @@ export class RegisterComponent implements OnInit {
     console.log(userData.get("company_logo"))
     //
     try {
+      this.store.dispatch(setLoading({loading:true})) // start loading
       this.service.registerRequest(userData).subscribe((user: any) => {
-        this.store.dispatch(setUser({ user }))
+        this.store.dispatch(setLoading({loading:false})) // ends loading
+        if (user.id) {
+          this.store.dispatch(setUser({ user }))
+          if(user.role === "user"){
+            this.router.navigate(["/"])
+          }
+          else if(user.role === "company"){
+            this.router.navigate(["/upload"])
+          }
+        }
       })
     } catch (error) {
       console.log(error)

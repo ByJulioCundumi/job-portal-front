@@ -7,6 +7,7 @@ import { JobServiceService } from 'src/app/services/job-service.service';
 import { setAllJobsFiltered } from 'src/app/state/allJobFiltered/all.jobs.filtered.actions';
 import { allJobsFilteredSelector } from 'src/app/state/allJobFiltered/all.jobs.filtered.selector';
 import { setAllJob } from 'src/app/state/allJobState/all.job.actions';
+import { setLoading } from 'src/app/state/loadingState/loadingActions';
 
 @Component({
   selector: 'app-jobs',
@@ -18,7 +19,9 @@ export class JobsComponent implements OnInit{
   constructor(private store: Store<IState>, private http: HttpClient, private service: JobServiceService) { }
 
   ngOnInit(): void {
+    this.store.dispatch(setLoading({loading:true})) // start loading
     this.service.getAllJobsRequest().subscribe((allJobs:any)=>{
+      this.store.dispatch(setLoading({loading:false})) // ends loading
       this.store.dispatch(setAllJob({jobs: allJobs}))
       this.store.dispatch(setAllJobsFiltered({jobs: allJobs}))
     })

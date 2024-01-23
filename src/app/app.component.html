@@ -1,5 +1,11 @@
 <section class="app">
   <router-outlet/>
+  <section class="app__loading" *ngIf="isLoading">
+    <div class="app__loading--container">
+      <h2>Por favor espere</h2>
+      <h3>Cargango...</h3>
+    </div>
+  </section>
 </section>
 
 

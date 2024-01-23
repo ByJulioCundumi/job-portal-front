@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { setJobs } from "./jobActions";
+import { addJob, removeJob, setJobs } from "./jobActions";
 import { IJobs } from "src/app/models/IJob";
 
 const initialState:IJobs = {
@@ -12,6 +12,21 @@ export const jobReducer = createReducer(
     return {
       ...state,
       jobs: [...jobs]
+    }
+  }),
+
+  on(addJob, (state, {job})=>{
+    return {
+      ...state,
+      jobs: [...state.jobs, job]
+    }
+  }),
+
+  on(removeJob, (state, {id})=>{
+    const newJobs = state.jobs.filter((job)=>{return job.id != id})
+    return {
+      ...state,
+      jobs: [...newJobs]
     }
   })
 )

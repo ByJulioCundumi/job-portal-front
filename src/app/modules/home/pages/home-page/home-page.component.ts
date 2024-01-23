@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IState } from 'src/app/models/IState';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { setLoading } from 'src/app/state/loadingState/loadingActions';
 import { modalSelector } from 'src/app/state/modalState/modal.selector';
 import { setUser } from 'src/app/state/userState/userActions';
 
@@ -21,8 +22,12 @@ export class HomePageComponent implements OnInit {
       this.modalState = m;
     })
 
+    this.store.dispatch(setLoading({loading:true})) // start loading
     this.service.verifyAccessRequest().subscribe((user:any)=>{
-      this.store.dispatch(setUser({user}))
+      this.store.dispatch(setLoading({loading:false})) // ends loading
+      if(user.id){
+        this.store.dispatch(setUser({user}))
+      }
     })
   }
 }

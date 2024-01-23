@@ -1,14 +1,16 @@
 <div class="upload-card">
   <div class="upload-card__head">
-    <img class="upload-card__head-img" [src]="userUrl">
-    <div class="upload-card__head-text">
-      <h3 class="upload-card__head-title">{{job.title}}</h3>
-      <p class="upload-card__head-location">{{job.location}}</p>
+    <div class="upload-card__head">
+      <img class="upload-card__head-img" [src]="userUrl">
+      <div class="upload-card__head-text">
+        <h3 class="upload-card__head-title">{{job.title}}</h3>
+        <p class="upload-card__head-location">{{job.location}}</p>
+      </div>
     </div>
     <button (click)="deleteJob(job.id)" class="upload-card__remove">X</button>
   </div>
   <p class="upload-card__description">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nemo architecto molestiae .
+    {{loadDescription(job.description)}}...
   </p>
   <div class="upload-card__footer">
     <p class="upload-card__footer-type">{{job.type}}</p>
